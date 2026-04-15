@@ -289,12 +289,17 @@
                 <a href="#results" class="hover:text-black transition underline-offset-4 hover:underline">Comparison</a>
                 <a href="#abstract" class="hover:text-black transition underline-offset-4 hover:underline">Abstract</a>
                 <a href="#method" class="hover:text-black transition underline-offset-4 hover:underline">Method</a>
+                <a href="#citation" class="hover:text-black transition underline-offset-4 hover:underline">Cite</a>
             </div>
         </div>
     </nav>
 
     <!-- Floating Controls -->
     <div id="floating-controls">
+        <a href="https://arxiv.org/abs/2601.22143" target="_blank" class="float-btn bg-white text-gray-700 hover:bg-gray-100 border border-black">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4v16h14V8.586L13.414 3H6a1 1 0 00-1 1zm14 0v-.414L13.414 3H13v5h5v.586L19.414 4H19zM7 6h5v7l2.5-1.5L17 13V6h1v14H7V6z"/></svg>
+            Paper
+        </a>
         <a href="https://github.com/justdubit/just-dub-it" target="_blank" class="float-btn bg-white text-gray-700 hover:bg-gray-100 border border-black">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -310,9 +315,12 @@
     <main class="max-w-5xl mx-auto px-6">
         <!-- Hero Section -->
         <header class="pt-20 pb-16 text-left">
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-gray-900 mb-6 leading-tight uppercase">
-                Just-Dub-It
-            </h1>
+            <div class="flex items-center gap-4 md:gap-6 mb-6 flex-wrap">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-gray-900 leading-tight uppercase">
+                    Just-Dub-It
+                </h1>
+                <span class="text-lg md:text-xl font-extrabold text-black tracking-widest uppercase border-2 border-black px-4 py-2 rounded-md">SIGGRAPH 2026</span>
+            </div>
             <p class="text-2xl md:text-3xl font-bold tracking-tight text-gray-800 mb-8 max-w-3xl leading-snug">
                 Video Dubbing via Joint Audio-Visual Diffusion
             </p>
@@ -320,9 +328,23 @@
                 Experience seamless lip synchronization and voice personality preservation across multiple languages. <br><br> A joint audio-visual model is all you need for video dubbing.
             </p>
             
-            <div class="flex flex-wrap justify-start gap-x-8 gap-y-4 text-sm font-medium text-gray-400 italic">
-                <span>Anonymous Authors</span>
+            <div class="flex flex-wrap justify-start gap-x-2 gap-y-1 text-base text-gray-700 mb-2">
+                <span><a href="https://atchen.com" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Anthony Chen</strong></a><sup>*†</sup>,</span>
+                <span><strong>Naomi Ken Korem</strong><sup>*</sup>,</span>
+                <span><strong>Tavi Halperin</strong>,</span>
+                <span><strong>Matan Ben Yosef</strong>,</span>
+                <span><strong>Urska Jelercic</strong>,</span>
+                <span><strong>Ofir Bibi</strong>,</span>
+                <span><strong>Or Patashnik</strong>,</span>
+                <span><strong>Daniel Cohen-Or</strong></span>
             </div>
+            <p class="text-sm text-gray-400 mb-1">* Equal contribution &middot; † Work done during visit at Tel Aviv University and internship at Lightricks</p>
+            <div class="flex flex-wrap justify-start gap-x-4 gap-y-1 text-sm text-gray-500 mb-8">
+                <a href="https://www.tau.ac.il/" target="_blank" class="hover:text-black transition">Tel Aviv University</a>
+                <span class="text-gray-300">&middot;</span>
+                <a href="https://www.lightricks.com/" target="_blank" class="hover:text-black transition">Lightricks</a>
+            </div>
+
         </header>
 
         <!-- Teaser Animation Section -->
@@ -983,6 +1005,27 @@
                 </div>
             </div>
         </section>
+        <!-- Citation -->
+        <section id="citation" class="section-spacing border-t border-gray-100">
+            <div class="max-w-5xl mx-auto text-left px-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Citation</h2>
+                <p class="text-gray-600 mb-6 font-light">If you find this work useful, please cite our paper:</p>
+                <div class="relative">
+                    <pre class="bg-gray-50 border border-gray-200 rounded-lg p-6 text-sm text-gray-700 overflow-x-auto font-mono leading-relaxed"><code>@misc{chen2026justdubitvideodubbingjoint,
+      title={JUST-DUB-IT: Video Dubbing via Joint Audio-Visual Diffusion}, 
+      author={Anthony Chen and Naomi Ken Korem and Tavi Halperin and Matan Ben Yosef and Urska Jelercic and Ofir Bibi and Or Patashnik and Daniel Cohen-Or},
+      year={2026},
+      eprint={2601.22143},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2601.22143}, 
+}</code></pre>
+                    <button onclick="copyBibtex()" class="absolute top-3 right-3 bg-white border border-gray-200 rounded-md px-3 py-1.5 text-xs font-medium text-gray-500 hover:text-black hover:border-gray-400 transition">
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -1304,6 +1347,24 @@
         };
         document.addEventListener('click', initOnInteraction);
         document.addEventListener('touchstart', initOnInteraction);
+
+        function copyBibtex() {
+            const bibtex = `@misc{chen2026justdubitvideodubbingjoint,
+      title={JUST-DUB-IT: Video Dubbing via Joint Audio-Visual Diffusion}, 
+      author={Anthony Chen and Naomi Ken Korem and Tavi Halperin and Matan Ben Yosef and Urska Jelercic and Ofir Bibi and Or Patashnik and Daniel Cohen-Or},
+      year={2026},
+      eprint={2601.22143},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2601.22143}, 
+}`;
+            navigator.clipboard.writeText(bibtex).then(() => {
+                const btn = document.querySelector('#citation button');
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = original; }, 2000);
+            });
+        }
 
         // Start the flow
         startTeaserFlow();
