@@ -274,6 +274,11 @@
         .float-btn:active {
             transform: translateY(0);
         }
+
+        /* Carousel */
+        .carousel-slide {
+            min-width: 100%;
+        }
     </style>
 </head>
 <body class="selection:bg-gray-200">
@@ -285,17 +290,22 @@
                 <span class="font-bold text-xl tracking-tight uppercase">Just-Dub-It</span>
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-                <a href="#gallery" class="hover:text-black transition underline-offset-4 hover:underline">Results</a>
                 <a href="#results" class="hover:text-black transition underline-offset-4 hover:underline">Comparison</a>
+                <a href="#gallery" class="hover:text-black transition underline-offset-4 hover:underline">More Results</a>
                 <a href="#abstract" class="hover:text-black transition underline-offset-4 hover:underline">Abstract</a>
                 <a href="#method" class="hover:text-black transition underline-offset-4 hover:underline">Method</a>
+                <a href="#citation" class="hover:text-black transition underline-offset-4 hover:underline">Cite</a>
             </div>
         </div>
     </nav>
 
     <!-- Floating Controls -->
     <div id="floating-controls">
-        <a href="https://github.com/justdubit/just-dub-it" target="_blank" class="float-btn bg-white text-gray-700 hover:bg-gray-100 border border-black">
+        <a href="https://arxiv.org/abs/2601.22143" target="_blank" class="float-btn bg-white text-gray-700 hover:bg-gray-100 border border-black">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4v16h14V8.586L13.414 3H6a1 1 0 00-1 1zm14 0v-.414L13.414 3H13v5h5v.586L19.414 4H19zM7 6h5v7l2.5-1.5L17 13V6h1v14H7V6z"/></svg>
+            Paper
+        </a>
+        <a href="https://github.com/Lightricks/LTX-2/tree/main/packages/ltx-pipelines#10-lipdubpipeline" target="_blank" class="float-btn bg-white text-gray-700 hover:bg-gray-100 border border-black">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
@@ -310,19 +320,42 @@
     <main class="max-w-5xl mx-auto px-6">
         <!-- Hero Section -->
         <header class="pt-20 pb-16 text-left">
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-gray-900 mb-6 leading-tight uppercase">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-gray-900 mb-0 leading-tight uppercase">
                 Just-Dub-It
             </h1>
-            <p class="text-2xl md:text-3xl font-bold tracking-tight text-gray-800 mb-8 max-w-3xl leading-snug">
+            <p class="text-2xl md:text-3xl font-bold tracking-tight text-gray-800 mb-4 max-w-3xl leading-snug">
                 Video Dubbing via Joint Audio-Visual Diffusion
             </p>
             <p class="text-xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light">
-                Experience seamless lip synchronization and voice personality preservation across multiple languages. <br><br> A joint audio-visual model is all you need for video dubbing.
+                A joint audio-visual model is all you need for video dubbing.
             </p>
             
-            <div class="flex flex-wrap justify-start gap-x-8 gap-y-4 text-sm font-medium text-gray-400 italic">
-                <span>Anonymous Authors</span>
+            <div class="flex justify-start gap-x-2 text-base text-gray-700 mb-1">
+                <span><a href="https://atchen.com" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Anthony Chen</strong></a><sup>1,2*†</sup>,</span>
+                <span><a href="https://github.com/Naomi-Ken-Korem" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Naomi Ken Korem</strong></a><sup>2*</sup>,</span>
+                <span><a href="https://linkedin.com/in/gal-zeevi-705601302" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Gal Zeevi</strong></a><sup>2</sup>,</span>
+                <span><a href="https://tavihalperin.me/" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Tavi Halperin</strong></a><sup>2</sup>,</span>
+                <span><a href="https://github.com/matanby" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Matan Ben Yosef</strong></a><sup>2</sup>,</span>
             </div>
+            <div class="flex justify-start gap-x-2 text-base text-gray-700 mb-2">
+                <span><a href="http://www-f1.ijs.si/~urska/" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Urska Jelercic</strong></a><sup>2</sup>,</span>
+                <span><a href="https://github.com/ofirbb" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Ofir Bibi</strong></a><sup>2</sup>,</span>
+                <span><a href="https://orpatashnik.github.io/" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Or Patashnik</strong></a><sup>1</sup>,</span>
+                <span><a href="https://danielcohenor.com/" target="_blank" class="hover:text-black transition underline underline-offset-2"><strong>Daniel Cohen-Or</strong></a><sup>1</sup></span>
+            </div>
+            <p class="text-sm text-gray-400 mb-1">* Equal contribution &middot; † Work done during visit at Tel Aviv University and internship at Lightricks</p>
+            <div class="flex items-center gap-8 mb-6">
+                <a href="https://www.tau.ac.il/" target="_blank" class="flex items-center gap-2 opacity-80 hover:opacity-100 transition">
+                    <sup class="text-sm font-semibold text-gray-500">1</sup>
+                    <img src="assets/images/TAU-Logo_Eng_.png" alt="Tel Aviv University" class="h-10 w-auto">
+                </a>
+                <a href="https://www.lightricks.com/" target="_blank" class="flex items-center gap-2 opacity-80 hover:opacity-100 transition">
+                    <sup class="text-sm font-semibold text-gray-500">2</sup>
+                    <img src="assets/images/Lightricks_Logo_Black-22911.png" alt="Lightricks" class="h-8 w-auto">
+                </a>
+            </div>
+            <span class="inline-block text-lg md:text-xl font-extrabold text-black tracking-widest uppercase border-2 border-black px-4 py-2 rounded-md mb-8">SIGGRAPH 2026</span>
+
         </header>
 
         <!-- Teaser Animation Section -->
@@ -331,14 +364,14 @@
                 <!-- Input Video Card -->
                 <div id="input-card" class="notemap-card p-1 w-full max-w-xs md:max-w-sm transition-all duration-1000 ease-in-out z-20 relative shrink-0 ratio-ours-1">
                     <video id="v-teaser-input" class="teaser-video-crop">
-                        <source src="assets/videos/home_alone1_source.mp4" type="video/mp4">
+                        <source src="assets/videos/teaser_input.mp4" type="video/mp4">
                     </video>
                     <button onclick="toggleMute('v-teaser-input')" class="audio-toggle">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072"></path></svg>
                     </button>
                     <div class="spectrogram-wrapper">
-                        <img src="assets/spectrograms/home_alone1_source.png" class="spectrogram-bg">
-                        <img src="assets/spectrograms/home_alone1_source.png" class="spectrogram-fg" id="spec-v-teaser-input">
+                        <img src="assets/spectrograms/teaser_input.png" class="spectrogram-bg">
+                        <img src="assets/spectrograms/teaser_input.png" class="spectrogram-fg" id="spec-v-teaser-input">
                     </div>
                     <div class="p-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Original Input</div>
                 </div>
@@ -368,98 +401,292 @@
                 <div id="ours-card-wrapper" class="shrink-0">
                     <div id="ours-card" class="notemap-card p-1 w-full max-w-xs md:max-w-sm border-black ring-1 ring-black ring-offset-4 shadow-2xl relative ratio-ours-1">
                         <video id="v-teaser-ours" class="teaser-video-crop">
-                            <source src="assets/videos/home_alone1_french_ours.mp4" type="video/mp4">
+                            <source src="assets/videos/teaser_french_ours.mp4" type="video/mp4">
                         </video>
                         <button onclick="toggleMute('v-teaser-ours')" class="audio-toggle">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072"></path></svg>
                         </button>
                         <div class="spectrogram-wrapper">
-                            <img src="assets/spectrograms/home_alone1_french_ours.png" class="spectrogram-bg">
-                            <img src="assets/spectrograms/home_alone1_french_ours.png" class="spectrogram-fg" id="spec-v-teaser-ours">
+                            <img src="assets/spectrograms/teaser_french_ours.png" class="spectrogram-bg">
+                            <img src="assets/spectrograms/teaser_french_ours.png" class="spectrogram-fg" id="spec-v-teaser-ours">
                         </div>
                         <div class="p-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">French (Ours)</div>
                     </div>
                 </div>
 
-                <!-- German Video Wrapper -->
+                <!-- Russian Video Wrapper -->
                 <div id="german-card-wrapper" class="shrink-0">
                     <div class="notemap-card p-1 w-full max-w-xs md:max-w-sm border-black ring-1 ring-black ring-offset-4 shadow-2xl relative ratio-ours-1">
                         <video id="v-teaser-german" class="teaser-video-crop">
-                            <source src="assets/videos/home_alone1_german_ours.mp4" type="video/mp4">
+                            <source src="assets/videos/teaser_russian_ours.mp4" type="video/mp4">
                         </video>
                         <div class="spectrogram-wrapper">
-                            <img src="assets/spectrograms/home_alone1_german_ours.png" class="spectrogram-bg">
-                            <img src="assets/spectrograms/home_alone1_german_ours.png" class="spectrogram-fg" id="spec-v-teaser-german">
+                            <img src="assets/spectrograms/teaser_russian_ours.png" class="spectrogram-bg">
+                            <img src="assets/spectrograms/teaser_russian_ours.png" class="spectrogram-fg" id="spec-v-teaser-german">
                         </div>
-                        <div class="p-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">German (Ours)</div>
+                        <div class="p-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">Russian (Ours)</div>
                     </div>
                 </div>
 
-                <!-- Portuguese Video Wrapper -->
+                <!-- Spanish Video Wrapper -->
                 <div id="portuguese-card-wrapper" class="shrink-0">
                     <div class="notemap-card p-1 w-full max-w-xs md:max-w-sm border-black ring-1 ring-black ring-offset-4 shadow-2xl relative ratio-ours-1">
                         <video id="v-teaser-portuguese" class="teaser-video-crop">
-                            <source src="assets/videos/home_alone1_portuguese_ours.mp4" type="video/mp4">
+                            <source src="assets/videos/teaser_spanish_ours.mp4" type="video/mp4">
                         </video>
                         <div class="spectrogram-wrapper">
-                            <img src="assets/spectrograms/home_alone1_portuguese_ours.png" class="spectrogram-bg">
-                            <img src="assets/spectrograms/home_alone1_portuguese_ours.png" class="spectrogram-fg" id="spec-v-teaser-portuguese">
+                            <img src="assets/spectrograms/teaser_spanish_ours.png" class="spectrogram-bg">
+                            <img src="assets/spectrograms/teaser_spanish_ours.png" class="spectrogram-fg" id="spec-v-teaser-portuguese">
                         </div>
-                        <div class="p-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">Portuguese (Ours)</div>
+                        <div class="p-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">Spanish (Ours)</div>
                     </div>
                 </div>
             </div>
             
-            <p class="mt-4 text-center text-gray-400 font-medium italic text-sm">JUST-DUB-IT maintains speaker identity and precise lip synchronization across any target language, <br> while demonstrating robustness to complex motion and real-world dynamics. </p>
+            <p class="mt-4 text-center text-gray-400 font-medium italic text-sm">JUST-DUB-IT maintains speaker identity and precise lip synchronization across diverse target language, <br> while demonstrating robustness to complex motion and real-world dynamics. </p>
         </section>
 
-        <!-- Introduction Video Section -->
-        <section id="intro-video" class="section-spacing border-t border-gray-100 px-4">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12 tracking-tight text-left">Introduction Video</h2>
-            <div class="max-w-4xl mx-auto">
-                <a href="https://www.youtube.com/watch?v=LkujJpffAlQ" target="_blank" class="block notemap-card p-1 border-black ring-1 ring-black shadow-2xl overflow-hidden group">
-                    <div class="relative w-full" style="padding-bottom: 56.25%;">
-                        <img 
-                            src="https://img.youtube.com/vi/LkujJpffAlQ/maxresdefault.jpg" 
-                            alt="Introduction Video Thumbnail"
-                            class="absolute top-0 left-0 w-full h-full object-cover rounded-md"
-                            onerror="this.src='https://img.youtube.com/vi/LkujJpffAlQ/hqdefault.jpg'"
-                        >
-                        <!-- Play button overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-red-700 group-hover:scale-110 transition-all duration-200">
-                                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
+        <!-- Results Carousel Section -->
+        <section id="results" class="section-spacing border-t border-gray-100">
+            <div class="text-left mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Better than state-of-the-art</h2>
+                <p class="text-gray-600 max-w-2xl font-light text-left"> LTX2.3 achieves superior voice preservation, lip synchronization, and naturalness comparied with LatentSync, X-Dub and HeyGen that rely on external voice-cloning tools (i.e. ElevenLabs in the follow examples). </p>
+            </div>
+
+            <div class="relative">
+                <!-- Carousel Navigation Arrows -->
+                <button onclick="carouselPrev()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 w-12 h-12 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 hover:shadow-xl transition-all">
+                    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="carouselNext()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 w-12 h-12 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 hover:shadow-xl transition-all">
+                    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
+
+                        <!-- Slide 1: Wedding Speech (French) -->
+                        <div class="carousel-slide w-full flex-shrink-0 px-2" data-prefix="v1">
+                            <div class="flex justify-between items-end mb-6">
+                                <div>
+                                    <span class="text-gray-400 font-bold text-sm tracking-widest uppercase">Example 1</span>
+                                    <h3 class="text-2xl font-bold text-gray-900 tracking-tight">Wedding Speech (French)</h3>
+                                </div>
+                                <button onclick="togglePlay('v1')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                    Sync Play/Pause
+                                </button>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v1-ref" src="assets/videos/sota_01_wedding_source.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v1-ref')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_01_wedding_source.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_01_wedding_source.png" class="spectrogram-fg" id="spec-v1-ref"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
+                                </div>
+                                <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1">
+                                    <video id="v1-ours" src="assets/videos/sota_01_wedding_ours.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v1-ours')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_01_wedding_ours.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_01_wedding_ours.png" class="spectrogram-fg" id="spec-v1-ours"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">LTX2.3 (Ours)</p>
+                                </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v1-ls" src="assets/videos/sota_01_wedding_latentsync.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v1-ls')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_01_wedding_latentsync.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_01_wedding_latentsync.png" class="spectrogram-fg" id="spec-v1-ls"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v1-xdub" src="assets/videos/sota_01_wedding_xdub.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v1-xdub')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_01_wedding_xdub.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_01_wedding_xdub.png" class="spectrogram-fg" id="spec-v1-xdub"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">X-Dub</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v1-hg" src="assets/videos/sota_01_wedding_heygen.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v1-hg')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_01_wedding_heygen.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_01_wedding_heygen.png" class="spectrogram-fg" id="spec-v1-hg"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- YouTube logo -->
-                        <div class="absolute bottom-4 right-4 opacity-80">
-                            <svg class="w-10 h-7" viewBox="0 0 90 20" fill="none">
-                                <path d="M27.973 18.064c-.306.79-.604 1.276-1.098 1.577-.494.3-1.124.36-1.89.36H3.015c-.766 0-1.396-.06-1.89-.36C.63 19.34.333 18.854.027 18.064-.28 17.274 0 15.392 0 14.31V5.69c0-1.082-.28-2.964.027-3.754C.333 1.146.63.66 1.125.36 1.619.06 2.249 0 3.015 0h21.97c.766 0 1.396.06 1.89.36.494.3.792.786 1.098 1.576.306.79.027 2.672.027 3.754v8.62c0 1.082.28 2.964-.027 3.754zM11.196 5.1v9.8l7.856-4.9-7.856-4.9z" fill="#FF0000"/>
-                            </svg>
+                        <!-- Slide 2: Watchmaker Bench (French) -->
+                        <div class="carousel-slide w-full flex-shrink-0 px-2" data-prefix="v2">
+                            <div class="flex justify-between items-end mb-6">
+                                <div>
+                                    <span class="text-gray-400 font-bold text-sm tracking-widest uppercase">Example 2</span>
+                                    <h3 class="text-2xl font-bold text-gray-900 tracking-tight">Watchmaker Bench (French)</h3>
+                                </div>
+                                <button onclick="togglePlay('v2')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                    Sync Play/Pause
+                                </button>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v2-ref" src="assets/videos/sota_02_watchmaker_source.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v2-ref')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_02_watchmaker_source.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_02_watchmaker_source.png" class="spectrogram-fg" id="spec-v2-ref"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
+                                </div>
+                                <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1">
+                                    <video id="v2-ours" src="assets/videos/sota_02_watchmaker_ours.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v2-ours')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_02_watchmaker_ours.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_02_watchmaker_ours.png" class="spectrogram-fg" id="spec-v2-ours"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">LTX2.3 (Ours)</p>
+                                </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v2-ls" src="assets/videos/sota_02_watchmaker_latentsync.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v2-ls')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_02_watchmaker_latentsync.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_02_watchmaker_latentsync.png" class="spectrogram-fg" id="spec-v2-ls"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v2-xdub" src="assets/videos/sota_02_watchmaker_xdub.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v2-xdub')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_02_watchmaker_xdub.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_02_watchmaker_xdub.png" class="spectrogram-fg" id="spec-v2-xdub"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">X-Dub</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v2-hg" src="assets/videos/sota_02_watchmaker_heygen.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v2-hg')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_02_watchmaker_heygen.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_02_watchmaker_heygen.png" class="spectrogram-fg" id="spec-v2-hg"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
+                                </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Slide 3: Download 50 (Spanish) -->
+                        <div class="carousel-slide w-full flex-shrink-0 px-2" data-prefix="v3">
+                            <div class="flex justify-between items-end mb-6">
+                                <div>
+                                    <span class="text-gray-400 font-bold text-sm tracking-widest uppercase">Example 3</span>
+                                    <h3 class="text-2xl font-bold text-gray-900 tracking-tight">Car Race (Spanish)</h3>
+                                </div>
+                                <button onclick="togglePlay('v3')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                    Sync Play/Pause
+                                </button>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v3-ref" src="assets/videos/sota_03_download50_source.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v3-ref')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_03_download50_source.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_03_download50_source.png" class="spectrogram-fg" id="spec-v3-ref"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
+                                </div>
+                                <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1">
+                                    <video id="v3-ours" src="assets/videos/sota_03_download50_ours.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v3-ours')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_03_download50_ours.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_03_download50_ours.png" class="spectrogram-fg" id="spec-v3-ours"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">LTX2.3 (Ours)</p>
+                                </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v3-ls" src="assets/videos/sota_03_download50_latentsync.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v3-ls')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_03_download50_latentsync.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_03_download50_latentsync.png" class="spectrogram-fg" id="spec-v3-ls"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v3-xdub" src="assets/videos/sota_03_download50_xdub.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v3-xdub')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_03_download50_xdub.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_03_download50_xdub.png" class="spectrogram-fg" id="spec-v3-xdub"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">X-Dub</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v3-hg" src="assets/videos/sota_03_download50_heygen.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v3-hg')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_03_download50_heygen.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_03_download50_heygen.png" class="spectrogram-fg" id="spec-v3-hg"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4: Boxer Corner (German) -->
+                        <div class="carousel-slide w-full flex-shrink-0 px-2" data-prefix="v4">
+                            <div class="flex justify-between items-end mb-6">
+                                <div>
+                                    <span class="text-gray-400 font-bold text-sm tracking-widest uppercase">Example 4</span>
+                                    <h3 class="text-2xl font-bold text-gray-900 tracking-tight">Boxer Corner (German)</h3>
+                                </div>
+                                <button onclick="togglePlay('v4')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                    Sync Play/Pause
+                                </button>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v4-ref" src="assets/videos/sota_04_boxer_source.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v4-ref')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_04_boxer_source.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_04_boxer_source.png" class="spectrogram-fg" id="spec-v4-ref"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
+                                </div>
+                                <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1">
+                                    <video id="v4-ours" src="assets/videos/sota_04_boxer_ours.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v4-ours')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_04_boxer_ours.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_04_boxer_ours.png" class="spectrogram-fg" id="spec-v4-ours"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-black uppercase tracking-[0.2em]">LTX2.3 (Ours)</p>
+                                </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="notemap-card p-1 border-gray-100 relative ratio-ours-1 flex flex-col justify-center items-center bg-gray-50 min-h-[180px]">
+                                    <div class="text-gray-300 text-[10px] font-bold uppercase tracking-widest text-center px-4">Generation Failed</div>
+                                    <p class="mt-4 absolute bottom-1 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] w-full">LatentSync</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v4-xdub" src="assets/videos/sota_04_boxer_xdub.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v4-xdub')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_04_boxer_xdub.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_04_boxer_xdub.png" class="spectrogram-fg" id="spec-v4-xdub"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">X-Dub</p>
+                                </div>
+                                <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1">
+                                    <video id="v4-hg" src="assets/videos/sota_04_boxer_heygen.mp4" muted loop class="teaser-video-crop"></video>
+                                    <button onclick="toggleMute('v4-hg')" class="audio-toggle group-hover:opacity-100"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+                                    <div class="spectrogram-wrapper"><img src="assets/spectrograms/sota_04_boxer_heygen.png" class="spectrogram-bg"><img src="assets/spectrograms/sota_04_boxer_heygen.png" class="spectrogram-fg" id="spec-v4-hg"></div>
+                                    <p class="mt-3 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </a>
-                <p class="mt-4 text-center text-gray-400 text-sm">Click to watch on YouTube</p>
+                </div>
+
+                <!-- Dot Indicators -->
+                <div class="flex justify-center gap-3 mt-8" id="carousel-dots"></div>
             </div>
         </section>
 
-        <!-- Output Gallery Section -->
+        <!-- More Results Section -->
         <section id="gallery" class="section-spacing border-t border-gray-100 px-4">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12 tracking-tight text-left">Diverse Results</h2>
-            
+            <div class="text-left mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">More Results</h2>
+                <p class="text-gray-600 max-w-2xl font-light text-left"> (Click on the bottom-right button on each cell to view the generated/original video) </p>
+            </div>
+
             <div class="space-y-4 lg:space-y-6">
                 <!-- Row 1: Two Small Left, One Large Right -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 md:h-[500px] lg:h-[600px]">
                     <div class="md:col-span-1 flex flex-col gap-4 lg:gap-6 h-full">
                         <div class="notemap-card p-1 border-black ring-1 ring-black shadow-lg relative group overflow-hidden flex-1">
-                            <video id="gallery-v1" muted autoplay loop class="w-full h-full object-cover rounded-md" 
-                                data-ours="assets/videos/man_dog_ours.mp4" 
-                                data-source="assets/videos/man_dog_source.mp4"
-                                data-ours-spec="assets/spectrograms/man_dog_ours.png"
-                                data-source-spec="assets/spectrograms/man_dog_source.png">
-                                <source src="assets/videos/man_dog_ours.mp4" type="video/mp4">
+                            <video id="gallery-v1" muted autoplay loop class="w-full h-full object-cover rounded-md"
+                                data-ours="assets/videos/ghost_tour_ours.mp4"
+                                data-source="assets/videos/ghost_tour_source.mp4"
+                                data-ours-spec="assets/spectrograms/ghost_tour_ours.png"
+                                data-source-spec="assets/spectrograms/ghost_tour_source.png">
+                                <source src="assets/videos/ghost_tour_ours.mp4" type="video/mp4">
                             </video>
                             <button onclick="toggleMute('gallery-v1')" class="audio-toggle group-hover:opacity-100">
                                 <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
@@ -470,17 +697,17 @@
                                 <span class="toggle-option inactive">Original</span>
                             </div>
                             <div class="spectrogram-wrapper mx-1 mb-1">
-                                <img src="assets/spectrograms/man_dog_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/man_dog_ours.png" class="spectrogram-fg" id="spec-gallery-v1">
+                                <img src="assets/spectrograms/ghost_tour_ours.png" class="spectrogram-bg">
+                                <img src="assets/spectrograms/ghost_tour_ours.png" class="spectrogram-fg" id="spec-gallery-v1">
                             </div>
                         </div>
                         <div class="notemap-card p-1 border-black ring-1 ring-black shadow-lg relative group overflow-hidden flex-1">
-                            <video id="gallery-v2" muted autoplay loop class="w-full h-full object-cover rounded-md" 
-                                data-ours="assets/videos/videovideo_UdoRmtd42ro-scene31_scene54_ours.mp4" 
-                                data-source="assets/videos/videovideo_UdoRmtd42ro-scene31_scene54_source.mp4"
-                                data-ours-spec="assets/spectrograms/videovideo_UdoRmtd42ro-scene31_scene54_ours.png"
-                                data-source-spec="assets/spectrograms/videovideo_UdoRmtd42ro-scene31_scene54_source.png">
-                                <source src="assets/videos/videovideo_UdoRmtd42ro-scene31_scene54_ours.mp4" type="video/mp4">
+                            <video id="gallery-v2" muted autoplay loop class="w-full h-full object-cover rounded-md"
+                                data-ours="assets/videos/download51_ours.mp4"
+                                data-source="assets/videos/download51_source.mp4"
+                                data-ours-spec="assets/spectrograms/download51_ours.png"
+                                data-source-spec="assets/spectrograms/download51_source.png">
+                                <source src="assets/videos/download51_ours.mp4" type="video/mp4">
                             </video>
                             <button onclick="toggleMute('gallery-v2')" class="audio-toggle group-hover:opacity-100">
                                 <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
@@ -491,19 +718,19 @@
                                 <span class="toggle-option inactive">Original</span>
                             </div>
                             <div class="spectrogram-wrapper mx-1 mb-1">
-                                <img src="assets/spectrograms/videovideo_UdoRmtd42ro-scene31_scene54_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/videovideo_UdoRmtd42ro-scene31_scene54_ours.png" class="spectrogram-fg" id="spec-gallery-v2">
+                                <img src="assets/spectrograms/download51_ours.png" class="spectrogram-bg">
+                                <img src="assets/spectrograms/download51_ours.png" class="spectrogram-fg" id="spec-gallery-v2">
                             </div>
                         </div>
                     </div>
                     <div class="md:col-span-2 h-full">
                         <div class="notemap-card p-1 border-black ring-1 ring-black shadow-2xl relative group overflow-hidden h-full">
-                            <video id="gallery-v3" muted autoplay loop class="w-full h-full object-cover rounded-md" 
-                                data-ours="assets/videos/girl_dog_ours.mp4" 
-                                data-source="assets/videos/girl_dog_source.mp4"
-                                data-ours-spec="assets/spectrograms/girl_dog_ours.png"
-                                data-source-spec="assets/spectrograms/girl_dog_source.png">
-                                <source src="assets/videos/girl_dog_ours.mp4" type="video/mp4">
+                            <video id="gallery-v3" muted autoplay loop class="w-full h-full object-cover rounded-md"
+                                data-ours="assets/videos/home_alone_ours.mp4"
+                                data-source="assets/videos/home_alone_source.mp4"
+                                data-ours-spec="assets/spectrograms/home_alone_ours.png"
+                                data-source-spec="assets/spectrograms/home_alone_source.png">
+                                <source src="assets/videos/home_alone_ours.mp4" type="video/mp4">
                             </video>
                             <button onclick="toggleMute('gallery-v3')" class="audio-toggle group-hover:opacity-100">
                                 <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
@@ -514,8 +741,8 @@
                                 <span class="toggle-option inactive">Original</span>
                             </div>
                             <div class="spectrogram-wrapper mx-1 mb-1">
-                                <img src="assets/spectrograms/girl_dog_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/girl_dog_ours.png" class="spectrogram-fg" id="spec-gallery-v3">
+                                <img src="assets/spectrograms/home_alone_ours.png" class="spectrogram-bg">
+                                <img src="assets/spectrograms/home_alone_ours.png" class="spectrogram-fg" id="spec-gallery-v3">
                             </div>
                         </div>
                     </div>
@@ -525,12 +752,12 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 md:h-[500px] lg:h-[600px]">
                     <div class="md:col-span-2 h-full">
                         <div class="notemap-card p-1 border-black ring-1 ring-black shadow-2xl relative group overflow-hidden h-full">
-                            <video id="gallery-v4" muted autoplay loop class="w-full h-full object-cover rounded-md" 
-                                data-ours="assets/videos/tree_ent_ours.mp4" 
-                                data-source="assets/videos/tree_ent_source.mp4"
-                                data-ours-spec="assets/spectrograms/tree_ent_ours.png"
-                                data-source-spec="assets/spectrograms/tree_ent_source.png">
-                                <source src="assets/videos/tree_ent_ours.mp4" type="video/mp4">
+                            <video id="gallery-v4" muted autoplay loop class="w-full h-full object-cover rounded-md"
+                                data-ours="assets/videos/animated_mentor_ours.mp4"
+                                data-source="assets/videos/animated_mentor_source.mp4"
+                                data-ours-spec="assets/spectrograms/animated_mentor_ours.png"
+                                data-source-spec="assets/spectrograms/animated_mentor_source.png">
+                                <source src="assets/videos/animated_mentor_ours.mp4" type="video/mp4">
                             </video>
                             <button onclick="toggleMute('gallery-v4')" class="audio-toggle group-hover:opacity-100">
                                 <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
@@ -541,19 +768,19 @@
                                 <span class="toggle-option inactive">Original</span>
                             </div>
                             <div class="spectrogram-wrapper mx-1 mb-1">
-                                <img src="assets/spectrograms/tree_ent_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/tree_ent_ours.png" class="spectrogram-fg" id="spec-gallery-v4">
+                                <img src="assets/spectrograms/animated_mentor_ours.png" class="spectrogram-bg">
+                                <img src="assets/spectrograms/animated_mentor_ours.png" class="spectrogram-fg" id="spec-gallery-v4">
                             </div>
                         </div>
                     </div>
                     <div class="md:col-span-1 flex flex-col gap-4 lg:gap-6 h-full">
                         <div class="notemap-card p-1 border-black ring-1 ring-black shadow-lg relative group overflow-hidden flex-1">
-                            <video id="gallery-v5" muted autoplay loop class="w-full h-full object-cover rounded-md" 
-                                data-ours="assets/videos/police_ours.mp4" 
-                                data-source="assets/videos/police_source.mp4"
-                                data-ours-spec="assets/spectrograms/police_ours.png"
-                                data-source-spec="assets/spectrograms/police_source.png">
-                                <source src="assets/videos/police_ours.mp4" type="video/mp4">
+                            <video id="gallery-v5" muted autoplay loop class="w-full h-full object-cover rounded-md"
+                                data-ours="assets/videos/astronaut_ours.mp4"
+                                data-source="assets/videos/astronaut_source.mp4"
+                                data-ours-spec="assets/spectrograms/astronaut_ours.png"
+                                data-source-spec="assets/spectrograms/astronaut_source.png">
+                                <source src="assets/videos/astronaut_ours.mp4" type="video/mp4">
                             </video>
                             <button onclick="toggleMute('gallery-v5')" class="audio-toggle group-hover:opacity-100">
                                 <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
@@ -564,17 +791,17 @@
                                 <span class="toggle-option inactive">Original</span>
                             </div>
                             <div class="spectrogram-wrapper mx-1 mb-1">
-                                <img src="assets/spectrograms/police_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/police_ours.png" class="spectrogram-fg" id="spec-gallery-v5">
+                                <img src="assets/spectrograms/astronaut_ours.png" class="spectrogram-bg">
+                                <img src="assets/spectrograms/astronaut_ours.png" class="spectrogram-fg" id="spec-gallery-v5">
                             </div>
                         </div>
                         <div class="notemap-card p-1 border-black ring-1 ring-black shadow-lg relative group overflow-hidden flex-1">
-                            <video id="gallery-v6" muted autoplay loop class="w-full h-full object-cover rounded-md" 
-                                data-ours="assets/videos/curb_ours.mp4" 
-                                data-source="assets/videos/curb_source.mp4"
-                                data-ours-spec="assets/spectrograms/curb_ours.png"
-                                data-source-spec="assets/spectrograms/curb_source.png">
-                                <source src="assets/videos/curb_ours.mp4" type="video/mp4">
+                            <video id="gallery-v6" muted autoplay loop class="w-full h-full object-cover rounded-md"
+                                data-ours="assets/videos/bohemian_ours.mp4"
+                                data-source="assets/videos/bohemian_source.mp4"
+                                data-ours-spec="assets/spectrograms/bohemian_ours.png"
+                                data-source-spec="assets/spectrograms/bohemian_source.png">
+                                <source src="assets/videos/bohemian_ours.mp4" type="video/mp4">
                             </video>
                             <button onclick="toggleMute('gallery-v6')" class="audio-toggle group-hover:opacity-100">
                                 <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
@@ -585,8 +812,8 @@
                                 <span class="toggle-option inactive">Original</span>
                             </div>
                             <div class="spectrogram-wrapper mx-1 mb-1">
-                                <img src="assets/spectrograms/curb_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/curb_ours.png" class="spectrogram-fg" id="spec-gallery-v6">
+                                <img src="assets/spectrograms/bohemian_ours.png" class="spectrogram-bg">
+                                <img src="assets/spectrograms/bohemian_ours.png" class="spectrogram-fg" id="spec-gallery-v6">
                             </div>
                         </div>
                     </div>
@@ -594,314 +821,6 @@
             </div>
             
             <p class="mt-8 text-center text-gray-400 font-medium italic text-sm px-4">JUST-DUB-IT achieves high fidelity and robust synchronization across diverse scenes.</p>
-        </section>
-
-        <!-- Results Section -->
-        <section id="results" class="section-spacing border-t border-gray-100">
-            <div class="text-left mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Better than state-of-the-art</h2>
-                <p class="text-gray-600 max-w-2xl font-light text-left">Compare our results with existing baselines across different languages and speakers.</p>
-            </div>
-            
-            <div class="space-y-24">
-                <!-- Example 1: Zootopia -->
-                <div class="text-left">
-                    <div class="flex justify-between items-end mb-8">
-                        <div>
-                            <span class="text-gray-400 font-bold text-sm tracking-widest uppercase text-left">Example 1</span>
-                            <h3 class="text-2xl font-bold text-gray-900 tracking-tight text-left">Zootopia 2 Trailer</h3>
-                        </div>
-                        <button onclick="togglePlay('v1')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                            Sync Play/Pause
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left">
-                            <video id="v1-ref" src="assets/videos/Zootopia_source.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v1-ref')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-5 h-5 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Zootopia_source.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Zootopia_source.png" class="spectrogram-fg" id="spec-v1-ref">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
-                        </div>
-                        <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1 text-left text-center">
-                            <video id="v1-ours" src="assets/videos/Zootopia_ours.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v1-ours')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-5 h-5 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Zootopia_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Zootopia_ours.png" class="spectrogram-fg" id="spec-v1-ours">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-black uppercase tracking-[0.2em]">JUST-DUB-IT</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left flex flex-col justify-center items-center bg-gray-50 min-h-[200px] mb-8">
-                            <div class="text-gray-300 text-[10px] font-bold uppercase tracking-widest text-center px-4">Result Not Available</div>
-                            <p class="mt-4 absolute bottom-1 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em] w-full">LatentSync</p>
-                            <p class="absolute -bottom-8 left-0 w-full text-xs text-red-900 font-bold italic text-center px-2">LatentSync corrupted for this case</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center mb-8">
-                            <video id="v1-hg" src="assets/videos/Zootopia_heygen.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v1-hg')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Zootopia_heygen.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Zootopia_heygen.png" class="spectrogram-fg" id="spec-v1-hg">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
-                            <p class="absolute -bottom-10 left-0 w-full text-xs text-red-900 font-bold italic text-center px-2 leading-tight">HeyGen fails and returned identical video with dubbed audio, which is out of sync</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 2: The Mask -->
-                <div class="text-left">
-                    <div class="flex justify-between items-end mb-8">
-                        <div>
-                            <span class="text-gray-400 font-bold text-sm tracking-widest uppercase text-left">Example 2</span>
-                            <h3 class="text-2xl font-bold text-gray-900 tracking-tight text-left">The Mask (Jim Carrey)</h3>
-                        </div>
-                        <button onclick="togglePlay('v2')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                            Sync Play/Pause
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left">
-                            <video id="v2-ref" src="assets/videos/The_Mask_source.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v2-ref')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/The_Mask_source.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/The_Mask_source.png" class="spectrogram-fg" id="spec-v2-ref">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
-                        </div>
-                        <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1 text-left text-center">
-                            <video id="v2-ours" src="assets/videos/The_Mask_ours.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v2-ours')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/The_Mask_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/The_Mask_ours.png" class="spectrogram-fg" id="spec-v2-ours">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-black uppercase tracking-[0.2em]">JUST-DUB-IT</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center">
-                            <video id="v2-ls" src="assets/videos/The_Mask_latentsync.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v2-ls')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/The_Mask_latentsync.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/The_Mask_latentsync.png" class="spectrogram-fg" id="spec-v2-ls">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
-                            <p class="absolute -bottom-10 left-0 w-full text-xs text-red-900 font-bold italic text-center px-2 leading-tight">LatentSync generates blurry video and fail to preserve the original duration.</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center">
-                            <video id="v2-hg" src="assets/videos/The_Mask_heygen.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v2-hg')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/The_Mask_heygen.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/The_Mask_heygen.png" class="spectrogram-fg" id="spec-v2-hg">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
-                            <p class="absolute -bottom-10 left-0 w-full text-xs text-red-900 font-bold italic text-center px-2 leading-tight">HeyGen fails on this case, naively copy-pasting the original video.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 3: Hans Landa -->
-                <div class="text-left">
-                    <div class="flex justify-between items-end mb-8 px-4">
-                        <div>
-                            <span class="text-gray-400 font-bold text-sm tracking-widest uppercase text-left">Example 3</span>
-                            <h3 class="text-2xl font-bold text-gray-900 tracking-tight text-left">Hans Landa</h3>
-                        </div>
-                        <button onclick="togglePlay('v3')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                            Sync Play/Pause
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left">
-                            <video id="v3-ref" src="assets/videos/Hans_Landa_source.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v3-ref')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-5 h-5 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Hans_Landa_source.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Hans_Landa_source.png" class="spectrogram-fg" id="spec-v3-ref">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
-                        </div>
-                        <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1 text-left text-center">
-                            <video id="v3-ours" src="assets/videos/Hans_Landa_ours.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v3-ours')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Hans_Landa_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Hans_Landa_ours.png" class="spectrogram-fg" id="spec-v3-ours">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-black uppercase tracking-[0.2em]">JUST-DUB-IT</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center">
-                            <video id="v3-ls" src="assets/videos/Hans_Landa_latentsync.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v3-ls')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-5 h-5 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Hans_Landa_latentsync.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Hans_Landa_latentsync.png" class="spectrogram-fg" id="spec-v3-ls">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center">
-                            <video id="v3-hg" src="assets/videos/Hans_Landa_heygen.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v3-hg')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-5 h-5 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Hans_Landa_heygen.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Hans_Landa_heygen.png" class="spectrogram-fg" id="spec-v3-hg">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 4: Bus Stop -->
-                <div class="text-left px-4">
-                    <div class="flex justify-between items-end mb-8">
-                        <div>
-                            <span class="text-gray-400 font-bold text-sm tracking-widest uppercase text-left">Example 4</span>
-                            <h3 class="text-2xl font-bold text-gray-900 tracking-tight text-left">Bus Stop (Russian Dub)</h3>
-                        </div>
-                        <button onclick="togglePlay('v4')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                            Sync Play/Pause
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-3 text-left">
-                            <video id="v4-ref" src="assets/videos/Bus_Stop_source.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v4-ref')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Bus_Stop_source.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Bus_Stop_source.png" class="spectrogram-fg" id="spec-v4-ref">
-                            </div>
-                            <p class="mt-3 text-center text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
-                        </div>
-                        <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-3 text-left text-center">
-                            <video id="v4-ours" src="assets/videos/Bus_Stop_ours.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v4-ours')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Bus_Stop_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Bus_Stop_ours.png" class="spectrogram-fg" id="spec-v4-ours">
-                            </div>
-                            <p class="mt-3 text-center text-[9px] font-bold text-black uppercase tracking-[0.2em]">JUST-DUB-IT</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-3 text-left text-center">
-                            <video id="v4-ls" src="assets/videos/Bus_Stop_latentsync.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v4-ls')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Bus_Stop_latentsync.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Bus_Stop_latentsync.png" class="spectrogram-fg" id="spec-v4-ls">
-                            </div>
-                            <p class="mt-3 text-center text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-3 text-left text-center">
-                            <video id="v4-hg" src="assets/videos/Bus_Stop_heygen.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v4-hg')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Bus_Stop_heygen.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Bus_Stop_heygen.png" class="spectrogram-fg" id="spec-v4-hg">
-                            </div>
-                            <p class="mt-3 text-center text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 5: Curb Your Enthusiasm -->
-                <div class="text-left px-4">
-                    <div class="flex justify-between items-end mb-8">
-                        <div>
-                            <span class="text-gray-400 font-bold text-sm tracking-widest uppercase text-left">Example 5</span>
-                            <h3 class="text-2xl font-bold text-gray-900 tracking-tight text-left">Larry David at a restaurant</h3>
-                        </div>
-                        <button onclick="togglePlay('v10')" class="btn-secondary py-2 flex items-center gap-2 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                            Sync Play/Pause
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left">
-                            <video id="v10-ref" src="assets/videos/Curb_Lazy_Susan_source.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v10-ref')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_source.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_source.png" class="spectrogram-fg" id="spec-v10-ref">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Source</p>
-                        </div>
-                        <div class="notemap-card p-1 border-black ring-1 ring-black ring-offset-2 shadow-xl relative group ratio-ours-1 text-left text-center">
-                            <video id="v10-ours" src="assets/videos/Curb_Lazy_Susan_ours.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v10-ours')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_ours.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_ours.png" class="spectrogram-fg" id="spec-v10-ours">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-black uppercase tracking-[0.2em]">JUST-DUB-IT</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center">
-                            <video id="v10-ls" src="assets/videos/Curb_Lazy_Susan_latentsync.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v10-ls')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_latentsync.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_latentsync.png" class="spectrogram-fg" id="spec-v10-ls">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">LatentSync</p>
-                        </div>
-                        <div class="notemap-card p-1 border-gray-100 relative group ratio-ours-1 text-left text-center">
-                            <video id="v10-hg" src="assets/videos/Curb_Lazy_Susan_heygen.mp4" muted loop class="teaser-video-crop"></video>
-                            <button onclick="toggleMute('v10-hg')" class="audio-toggle group-hover:opacity-100">
-                                <svg class="w-4 h-4 mute-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                            </button>
-                            <div class="spectrogram-wrapper">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_heygen.png" class="spectrogram-bg">
-                                <img src="assets/spectrograms/Curb_Lazy_Susan_heygen.png" class="spectrogram-fg" id="spec-v10-hg">
-                            </div>
-                            <p class="mt-4 text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">HeyGen</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </section>
 
         <!-- Abstract -->
@@ -983,6 +902,27 @@
                 </div>
             </div>
         </section>
+        <!-- Citation -->
+        <section id="citation" class="section-spacing border-t border-gray-100">
+            <div class="max-w-5xl mx-auto text-left px-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Citation</h2>
+                <p class="text-gray-600 mb-6 font-light">If you find this work useful, please cite our paper:</p>
+                <div class="relative">
+                    <pre class="bg-gray-50 border border-gray-200 rounded-lg p-6 text-sm text-gray-700 overflow-x-auto font-mono leading-relaxed"><code>@misc{chen2026justdubitvideodubbingjoint,
+      title={JUST-DUB-IT: Video Dubbing via Joint Audio-Visual Diffusion}, 
+      author={Anthony Chen and Naomi Ken Korem and Gal Zeevi and Tavi Halperin and Matan Ben Yosef and Urska Jelercic and Ofir Bibi and Or Patashnik and Daniel Cohen-Or},
+      year={2026},
+      eprint={2601.22143},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2601.22143}, 
+}</code></pre>
+                    <button onclick="copyBibtex()" class="absolute top-3 right-3 bg-white border border-gray-200 rounded-md px-3 py-1.5 text-xs font-medium text-gray-500 hover:text-black hover:border-gray-400 transition">
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -1008,6 +948,7 @@
                 document.getElementById(prefix + '-ours'),
                 document.getElementById(prefix + '-ls'),
                 document.getElementById(prefix + '-hg'),
+                document.getElementById(prefix + '-xdub'),
                 document.getElementById(prefix + '-heygen'),
                 document.getElementById(prefix + '-other')
             ].filter(v => v !== null);
@@ -1304,6 +1245,63 @@
         };
         document.addEventListener('click', initOnInteraction);
         document.addEventListener('touchstart', initOnInteraction);
+
+        function copyBibtex() {
+            const bibtex = `@misc{chen2026justdubitvideodubbingjoint,
+      title={JUST-DUB-IT: Video Dubbing via Joint Audio-Visual Diffusion}, 
+      author={Anthony Chen and Naomi Ken Korem and Gal Zeevi and Tavi Halperin and Matan Ben Yosef and Urska Jelercic and Ofir Bibi and Or Patashnik and Daniel Cohen-Or},
+      year={2026},
+      eprint={2601.22143},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2601.22143}, 
+}`;
+            navigator.clipboard.writeText(bibtex).then(() => {
+                const btn = document.querySelector('#citation button');
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = original; }, 2000);
+            });
+        }
+
+        // Carousel logic
+        let carouselIndex = 0;
+        const carouselTrack = document.getElementById('carousel-track');
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        const carouselDotsContainer = document.getElementById('carousel-dots');
+        const totalSlides = carouselSlides.length;
+
+        function buildDots() {
+            carouselDotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full transition-all ' + (i === carouselIndex ? 'bg-black scale-110' : 'bg-gray-300 hover:bg-gray-400');
+                dot.onclick = () => carouselGoTo(i);
+                carouselDotsContainer.appendChild(dot);
+            }
+        }
+
+        function carouselGoTo(idx) {
+            pauseSlideVideos(carouselIndex);
+            carouselIndex = ((idx % totalSlides) + totalSlides) % totalSlides;
+            carouselTrack.style.transform = `translateX(-${carouselIndex * 100}%)`;
+            buildDots();
+        }
+
+        function carouselNext() { carouselGoTo(carouselIndex + 1); }
+        function carouselPrev() { carouselGoTo(carouselIndex - 1); }
+
+        function pauseSlideVideos(idx) {
+            const slide = carouselSlides[idx];
+            if (!slide) return;
+            slide.querySelectorAll('video').forEach(v => {
+                v.pause();
+                v.muted = true;
+                updateMuteButtonUI(v.id);
+            });
+        }
+
+        buildDots();
 
         // Start the flow
         startTeaserFlow();
