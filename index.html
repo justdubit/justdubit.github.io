@@ -1073,7 +1073,7 @@
             teaserContainer.className = 'flex flex-row items-center justify-center min-h-[900px] transition-all duration-1000 teaser-step-1';
             
             // Phase 1: Input alone
-            vInput.muted = false;
+            vInput.muted = true;
             updateMuteButtonUI('v-teaser-input');
             
             try {
@@ -1095,7 +1095,7 @@
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 
                 vInput.muted = true;
-                vFrench.muted = false;
+                vFrench.muted = true;
                 updateMuteButtonUI('v-teaser-input');
                 updateMuteButtonUI('v-teaser-ours');
                 
@@ -1121,19 +1121,20 @@
                     
                     await new Promise(resolve => setTimeout(resolve, 1000));
                     
-                    // Cleanup and enable hover
-                    vInput.pause();
-                    vFrench.pause();
-                    enableHoverPlay(vInput);
-                    enableHoverPlay(vFrench);
-                    enableHoverPlay(vGerman);
-                    enableHoverPlay(vPortuguese);
+                    // Keep every teaser video moving silently; hover only controls sound.
+                    [vInput, vFrench, vGerman, vPortuguese].forEach(playMutedLoop);
                 };
             };
         }
 
+        function playMutedLoop(videoElement) {
+            videoElement.loop = true;
+            videoElement.muted = true;
+            updateMuteButtonUI(videoElement.id);
+            videoElement.play().catch(() => {});
+        }
+
         function enableHoverPlay(videoElement) {
-            videoElement.loop = true; // Allow looping when hovering
             const card = videoElement.closest('.notemap-card') || videoElement.parentElement;
             let type = 'ours';
             if (videoElement.id === 'v-teaser-input') type = 'input';
@@ -1143,14 +1144,12 @@
             card.onmouseenter = () => {
                 videoElement.muted = false;
                 updateMuteButtonUI(videoElement.id);
-                videoElement.play();
                 teaserContainer.classList.add('hovering-' + type);
             };
             
             card.onmouseleave = () => {
                 videoElement.muted = true;
                 updateMuteButtonUI(videoElement.id);
-                videoElement.pause();
                 teaserContainer.classList.remove('hovering-' + type);
             };
         }
@@ -1219,19 +1218,11 @@
         vGerman.loop = false;
         vPortuguese.loop = false;
 
+        [vInput, vFrench, vGerman, vPortuguese].forEach(enableHoverPlay);
+
         // Start flow on first interaction to ensure sound works
         const initOnInteraction = () => {
             if (teaserStarted) {
-                // If already playing muted, try to unmute
-                if (!vInput.paused && vInput.muted) {
-                    vInput.muted = false;
-                    updateMuteButtonUI('v-teaser-input');
-                }
-                if (!vFrench.paused && vFrench.muted) {
-                    vFrench.muted = false;
-                    updateMuteButtonUI('v-teaser-ours');
-                }
-                
                 // Ensure they are actually playing if they were stuck
                 if (vInput.paused) vInput.play().catch(() => {});
                 if (!teaserContainer.classList.contains('teaser-step-1') && vFrench.paused) {
